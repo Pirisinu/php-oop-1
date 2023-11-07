@@ -8,15 +8,20 @@ class Serie extends Production {
 
   //Costruttore
   public function __construct(
+    string $_title,
+    string $_image,
+    string $_description,
+    string $_language,
+    array $_genre,
     string $_airedFromYear,
     string $_airedToYear,
-    int $_numberOfEpisodes,
-    int $_numberOfSeasons
+    string $_numberOfEpisodes,
+    string $_numberOfSeasons
     ){
+      parent::__construct($_title, $_image, $_description, $_language, $_genre);
     $this->airedFromYear = $_airedFromYear;
     $this->airedToYear = $_airedToYear;
     $this->numberOfEpisodes = $_numberOfEpisodes;
     $this->numberOfSeasons = $_numberOfSeasons;
-    parent::__construct($_title, $_image, $_description, $_language, $_genre);
   }
 }

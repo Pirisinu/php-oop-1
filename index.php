@@ -23,7 +23,7 @@ require_once __DIR__ . '/db/db.php';
   <div id="film" class="container my-5 py-5 rounded rounded-4">
     <h1>Film:</h1>
     <div class="d-flex flex-wrap justify-content-evenly gap-3">
-      <?php foreach($movies as $movie): ?>
+      <?php foreach($production['movies'] as $movie): ?>
         <div class="card" style="width:400px">
           <img src="img/<?php echo $movie->image ?>" class="card-img-top h-75" alt="No img">
           <div class="card-body">
@@ -40,7 +40,7 @@ require_once __DIR__ . '/db/db.php';
   <div id="series" class="container my-5 py-5 rounded rounded-4">
     <h1>Series:</h1>
     <div class="d-flex flex-wrap justify-content-evenly gap-3">
-      <?php foreach($series as $serie): ?>
+      <?php foreach($production['series'] as $serie): ?>
         <div class="card" style="width:400px">
           <img src="img/<?php echo $serie->image ?>" class="card-img-top h-75" alt="No img">
           <div class="card-body">
@@ -48,6 +48,10 @@ require_once __DIR__ . '/db/db.php';
             <p class="card-text">Descrizione:<?php echo $serie->description->plot ?></p>
             <p class="card-text">Lingua:<?php echo $serie->description->language ?></p>
             <p class="card-text">Genere:<?php echo implode('-', $serie->description->genre) ?></p>
+            <p class="card-text">Genere:<?php echo $serie->airedFromYear ?></p>
+            <p class="card-text">Genere:<?php echo $serie->airedToYear ?></p>
+            <p class="card-text">Genere:<?php echo $serie->numberOfEpisodes ?></p>
+            <p class="card-text">Genere:<?php echo $serie->numberOfSeasons ?></p>
           </div>
         </div>
       <?php endforeach; ?>
