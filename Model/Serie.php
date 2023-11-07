@@ -1,22 +1,22 @@
 <?php
 class Serie extends Production {
   //Variabili d'istanza
-  public $aired_from_year;
-  public $aired_to_year;
-  public $number_of_episodes;
-  public $number_of_seasons;
+  public $airedFromYear;
+  public $airedToYear;
+  public $numberOfEpisodes;
+  public $numberOfSeasons;
 
   //Costruttore
   public function __construct(
-    int $_aired_from_year,
-    int $_aired_to_year,
-    int $_number_of_episodes,
-    int $_number_of_seasons
+    string $_airedFromYear,
+    string $_airedToYear,
+    int $_numberOfEpisodes,
+    int $_numberOfSeasons
     ){
-    $this->aired_from_year = $_aired_from_year;
-    $this->aired_to_year = $_aired_to_year;
-    $this->number_of_episodes = $_number_of_episodes;
-    $this->number_of_seasons = $_number_of_seasons;
+    $this->airedFromYear = $_airedFromYear;
+    $this->airedToYear = $_airedToYear;
+    $this->numberOfEpisodes = $_numberOfEpisodes;
+    $this->numberOfSeasons = $_numberOfSeasons;
     parent::__construct($_title, $_image, $_description, $_language, $_genre);
   }
 }
