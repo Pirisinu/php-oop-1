@@ -1,30 +1,8 @@
 <?php
-class Movie {
-  //Variabili d'istanza
-  public $title;
-  public $image;
-  public $description;
-  public $language;
-  public $vote;
-  public $price;
-  public $discount;
 
-  //Costruttore
-  public function __construct(string $_title,string $_image,string $description,int $_price){
-    $this->title = $_title;
-    $this->image = $_image;
-    $this->description = $description;
-    $this->price = $_price;
-  }
-}
-$movies = [
-  'matrix'=> new Movie('Matrix', 'matrix.jpg', 'Matrix description', 10),
-  'barbie'=> new Movie('barbie', 'barbie.jpg', 'barbie description', 8),
-  'titanic' => new Movie('titanic', 'titanic.jpg', 'titanic description', 20),
-  'matrix2'=> new Movie('Matrix', 'matrix.jpg', 'Matrix description', 10),
-  'barbie2'=> new Movie('barbie', 'barbie.jpg', 'barbie description', 8),
-  'titanic2' => new Movie('titanic', 'titanic.jpg', 'titanic description', 20)
-];
+require_once __DIR__ . '/Model/Movie.php';
+require_once __DIR__ . '/Model/Description.php';
+require_once __DIR__ . '/db/db.php';
 
 ?>
 <!DOCTYPE html>
@@ -39,14 +17,16 @@ $movies = [
   <title>Php Oop-1</title>
 </head>
 <body>
-  <div class="container d-flex flex-wrap gap-3">
+  <div class="container my-5 py-5 bg-primary d-flex flex-wrap justify-content-evenly gap-3 rounded rounded-4">
     <?php foreach($movies as $movie): ?>
-      <div class="card" style="width: 18rem;">
-        <img src="img/<?php echo $movie->image ?>" class="card-img-top" alt="No img">
+      <div class="card" style="width:400px">
+        <img src="img/<?php echo $movie->image ?>" class="card-img-top h-75" alt="No img">
         <div class="card-body">
-          <h5 class="card-title"><?php echo $movie->title ?></h5>
-          <p class="card-text"><?php echo $movie->description ?></p>
-          <p class="card-text"><?php echo $movie->price ?></p>
+          <h5 class="card-title">TITLE:<?php echo $movie->title ?></h5>
+          <p class="card-text">Descrizione:<?php echo $movie->description->plot ?></p>
+          <p class="card-text">Lingua:<?php echo $movie->description->language ?></p>
+          <p class="card-text">Genere:<?php echo implode('-', $movie->description->genre) ?></p>
+          <p class="card-text"><?php echo $movie->price ?>&euro;</p>
         </div>
       </div>
     <?php endforeach; ?>
