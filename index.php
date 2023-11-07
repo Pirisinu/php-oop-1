@@ -1,5 +1,6 @@
 <?php
 
+require_once __DIR__ . '/Model/Production.php';
 require_once __DIR__ . '/Model/Movie.php';
 require_once __DIR__ . '/Model/Description.php';
 require_once __DIR__ . '/db/db.php';
@@ -26,7 +27,6 @@ require_once __DIR__ . '/db/db.php';
           <p class="card-text">Descrizione:<?php echo $movie->description->plot ?></p>
           <p class="card-text">Lingua:<?php echo $movie->description->language ?></p>
           <p class="card-text">Genere:<?php echo implode('-', $movie->description->genre) ?></p>
-          <p class="card-text"><?php echo $movie->price ?>&euro;</p>
         </div>
       </div>
     <?php endforeach; ?>
