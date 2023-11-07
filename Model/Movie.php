@@ -1,16 +1,21 @@
 <?php
 class Movie extends Production {
   //Variabili d'istanza
-  public $published_year;
-  public $running_time;
+  public $publishedYear;
+  public $runningTime;
 
   //Costruttore
   public function __construct(
-    string $_published_year,
-    string $_running_time
+    string $_title,
+    string $_image,
+    string $_description,
+    string $_language,
+    array $_genre,
+    string $_publishedYear,
+    string $_runningTime
     ){
     parent::__construct($_title, $_image, $_description, $_language, $_genre);
-    $this->published_year = $_published_year;
-    $this->running_time = $_running_time;
+    $this->publishedYear = $_publishedYear;
+    $this->runningTime = $_runningTime;
   }
 }

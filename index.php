@@ -18,18 +18,39 @@ require_once __DIR__ . '/db/db.php';
   <title>Php Oop-1</title>
 </head>
 <body>
-  <div class="container my-5 py-5 bg-primary d-flex flex-wrap justify-content-evenly gap-3 rounded rounded-4">
-    <?php foreach($movies as $movie): ?>
-      <div class="card" style="width:400px">
-        <img src="img/<?php echo $movie->image ?>" class="card-img-top h-75" alt="No img">
-        <div class="card-body">
-          <h5 class="card-title">TITLE:<?php echo $movie->title ?></h5>
-          <p class="card-text">Descrizione:<?php echo $movie->description->plot ?></p>
-          <p class="card-text">Lingua:<?php echo $movie->description->language ?></p>
-          <p class="card-text">Genere:<?php echo implode('-', $movie->description->genre) ?></p>
+  <!-- FILM -->
+  <div id="film" class="container my-5 py-5 rounded rounded-4">
+    <h1>Film:</h1>
+    <div class="d-flex flex-wrap justify-content-evenly gap-3">
+      <?php foreach($movies as $movie): ?>
+        <div class="card" style="width:400px">
+          <img src="img/<?php echo $movie->image ?>" class="card-img-top h-75" alt="No img">
+          <div class="card-body">
+            <h5 class="card-title">TITLE:<?php echo $movie->title ?></h5>
+            <p class="card-text">Descrizione:<?php echo $movie->description->plot ?></p>
+            <p class="card-text">Lingua:<?php echo $movie->description->language ?></p>
+            <p class="card-text">Genere:<?php echo implode('-', $movie->description->genre) ?></p>
+          </div>
         </div>
-      </div>
-    <?php endforeach; ?>
+      <?php endforeach; ?>
+    </div>
+  </div>
+  <!-- SERIE -->
+  <div id="series" class="container my-5 py-5 rounded rounded-4">
+    <h1>Series:</h1>
+    <div class="d-flex flex-wrap justify-content-evenly gap-3">
+      <?php foreach($movies as $movie): ?>
+        <div class="card" style="width:400px">
+          <img src="img/<?php echo $movie->image ?>" class="card-img-top h-75" alt="No img">
+          <div class="card-body">
+            <h5 class="card-title">TITLE:<?php echo $movie->title ?></h5>
+            <p class="card-text">Descrizione:<?php echo $movie->description->plot ?></p>
+            <p class="card-text">Lingua:<?php echo $movie->description->language ?></p>
+            <p class="card-text">Genere:<?php echo implode('-', $movie->description->genre) ?></p>
+          </div>
+        </div>
+      <?php endforeach; ?>
+    </div>
   </div>
 </body>
 </html>
