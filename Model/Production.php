@@ -11,12 +11,10 @@ class Production{
   public function __construct(
     string $_title,
     string $_image,
-    string $_description,
-    string $_language,
-    array $_genre
+    Description $_description
     ){
     $this->title = $_title;
     $this->image = $_image;
-    $this->description = new Description($_description, $_language, $_genre);
+    $this->description = $_description;
   }
 }
