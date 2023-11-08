@@ -29,7 +29,10 @@ require_once __DIR__ . '/db/db.php';
           <div class="card-body">
             <h5 class="card-title">TITLE:<?php echo $movie->title ?></h5>
             <p class="card-text">Descrizione:<?php echo $movie->description->plot ?></p>
-            <p class="card-text">Lingua:<?php echo $movie->description->language ?></p>
+            <div class="card-text">
+              <span>Lingua:</span>
+              <img class="w-25" src="<?php echo $movie->description->getFlagPath($movie->description->language) ?>" alt="Img">
+            </div>
             <p class="card-text">Genere:<?php echo implode('-', $movie->description->genre) ?></p>
           </div>
         </div>
@@ -46,7 +49,10 @@ require_once __DIR__ . '/db/db.php';
           <div class="card-body">
             <h5 class="card-title">TITLE:<?php echo $serie->title ?></h5>
             <p class="card-text">Descrizione:<?php echo $serie->description->plot ?></p>
-            <p class="card-text">Lingua:<?php echo $serie->description->language ?></p>
+            <div class="card-text">
+              <span>Lingua:</span>
+              <img class="w-25" src="<?php echo $serie->description->getFlagPath($serie->description->language) ?>" alt="Img">
+            </div>
             <p class="card-text">Genere:<?php echo implode('-', $serie->description->genre) ?></p>
             <p class="card-text">Anno primo episodio della serie:<?php echo $serie->airedFromYear ?></p>
             <p class="card-text">Anno ultimo episodio della serie:<?php echo $serie->airedToYear ?></p>

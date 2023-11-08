@@ -1,5 +1,7 @@
 <?php
+require './Traits/LangFlag.php';
 class Description{
+  use LangFlag;
   //Variabili d'istanza
   public $plot;
   public $language;
