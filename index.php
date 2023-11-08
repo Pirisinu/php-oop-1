@@ -48,10 +48,10 @@ require_once __DIR__ . '/db/db.php';
             <p class="card-text">Descrizione:<?php echo $serie->description->plot ?></p>
             <p class="card-text">Lingua:<?php echo $serie->description->language ?></p>
             <p class="card-text">Genere:<?php echo implode('-', $serie->description->genre) ?></p>
-            <p class="card-text">Genere:<?php echo $serie->airedFromYear ?></p>
-            <p class="card-text">Genere:<?php echo $serie->airedToYear ?></p>
-            <p class="card-text">Genere:<?php echo $serie->numberOfEpisodes ?></p>
-            <p class="card-text">Genere:<?php echo $serie->numberOfSeasons ?></p>
+            <p class="card-text">Anno primo episodio della serie:<?php echo $serie->airedFromYear ?></p>
+            <p class="card-text">Anno ultimo episodio della serie:<?php echo $serie->airedToYear ?></p>
+            <p class="card-text">Numero di episodi<?php echo $serie->numberOfEpisodes ?></p>
+            <p class="card-text">Numero di stagioni<?php echo $serie->numberOfSeasons ?></p>
           </div>
         </div>
       <?php endforeach; ?>
