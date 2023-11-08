@@ -31,9 +31,12 @@ require_once __DIR__ . '/db/db.php';
             <p class="card-text">Descrizione:<?php echo $movie->description->plot ?></p>
             <div class="card-text">
               <span>Lingua:</span>
+              <span><?php echo $movie->description->language ?></span>
               <img class="w-25" src="<?php echo $movie->description->getFlagPath($movie->description->language) ?>" alt="Img">
             </div>
             <p class="card-text">Genere:<?php echo implode('-', $movie->description->genre) ?></p>
+            <p class="card-text">Anno di pubblicazione:<?php echo $movie->publishedYear?></p>
+            <p class="card-text">Durata in minuti:<?php echo $movie->runningTime ?></p>
           </div>
         </div>
       <?php endforeach; ?>
